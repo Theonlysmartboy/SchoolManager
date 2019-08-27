@@ -18,9 +18,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.logging.log4j.Level;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.apache.log4j.Level;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -40,7 +40,6 @@ public class LoginController {
     private void handleLoginButtonAction(ActionEvent event) {
         String uname = username.getText();
         String pword = DigestUtils.shaHex(password.getText());
-
         if (uname.equals(preference.getUsername()) && pword.equals(preference.getPassword())) {
             closeStage();
             loadMain();
